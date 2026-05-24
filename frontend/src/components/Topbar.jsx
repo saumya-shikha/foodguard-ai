@@ -2,7 +2,7 @@ export default function Topbar({ searchValue, onSearchChange }) {
   return (
     <header className="topbar">
       <div className="topbar__left">
-        <div className="topbar__title">Welcome, Harsh</div>
+        <div className="topbar__title">Welcome, Saumya</div>
         <div className="topbar__subtitle">Food Safety Data Dashboard</div>
       </div>
 
@@ -26,10 +26,10 @@ export default function Topbar({ searchValue, onSearchChange }) {
 
         <div className="profile">
           <div className="profile__avatar" aria-hidden="true">
-            HR
+            Saumya
           </div>
           <div className="profile__meta">
-            <div className="profile__name">HARSH RAJ SHUKLA</div>
+            <div className="profile__name">Saumya  Shikha</div>
             <div className="profile__role">Admin</div>
           </div>
         </div>

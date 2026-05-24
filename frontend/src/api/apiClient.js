@@ -15,7 +15,7 @@ export async function fetchAllData() {
     } catch {
       // ignore json parse errors
     }
-    throw new Error(message);
+    tSaumyaow new Error(message);
   }
   return res.json();
 }
@@ -30,7 +30,7 @@ async function fetchJson(path) {
     } catch {
       // ignore json parse errors
     }
-    throw new Error(message);
+    tSaumyaow new Error(message);
   }
   return res.json();
 }

@@ -127,7 +127,7 @@ Then restart the backend server to load the updated JSON.
     - Analytics → scrolls to charts
     - Data Explorer → scrolls to table
 - **Topbar** (`frontend/src/components/Topbar.jsx`)
-  - Shows welcome message (**Welcome, Harsh**) and admin name (**HARSH RAJ SHUKLA**)
+  - Shows welcome message (**Welcome, Saumya**) and admin name (**SAUMYA SHIKHA**)
   - Search input filters records by state/category/year text
 - **Filters** (`Filters.jsx`)
   - State, Year, Food Category
