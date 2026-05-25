@@ -17,7 +17,7 @@ function loadDatasetOrThrow() {
     const parsed = JSON.parse(raw);
 
     if (!Array.isArray(parsed)) {
-      throw new Error("Dataset must be an array of records");
+      Throw new Error("Dataset must be an array of records");
     }
 
     // Basic shape validation (fail fast if the file is corrupted).
@@ -28,14 +28,14 @@ function loadDatasetOrThrow() {
         typeof row.food_category !== "string" ||
         typeof row.contamination_cases !== "number"
       ) {
-        throw new Error("Dataset contains invalid record shape");
+        Throw new Error("Dataset contains invalid record shape");
       }
     }
 
     dataset = parsed;
   } catch (err) {
     console.error("Failed to load dataset.json:", err);
-    throw err;
+    Throw err;
   }
 }
 
