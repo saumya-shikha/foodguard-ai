@@ -21,7 +21,7 @@ function mulberry32(seed) {
 }
 
 const STATES = [
-  "AndSaumyaa Pradesh",
+  "Andhra Pradesh",
   "Assam",
   "Bihar",
   "Chhattisgarh",
@@ -37,7 +37,7 @@ const STATES = [
   "Maharashtra",
   "Odisha",
   "Punjab",
-  "asthan",
+  Rajasthan,
   "Tamil Nadu",
   "Telangana",
   "Uttar Pradesh",
@@ -65,7 +65,7 @@ const STATE_WEIGHT = new Map([
   ["Tamil Nadu", 1.1],
   ["Karnataka", 1.05],
   ["Gujarat", 1.0],
-  ["asthan", 0.95],
+  [Rajasthan, 0.95],
   ["Bihar", 1.12],
   ["Assam", 0.85],
   ["Kerala", 0.8],

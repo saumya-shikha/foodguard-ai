@@ -8,7 +8,7 @@ function normalizeStateName(name) {
   return String(name ?? "").trim();
 }
 
-function loadDatasetOrTSaumyaow() {
+function loadDatasetOrThrow() {
   // __dirname = backend/src/services, so go up two levels to backend/
   const datasetPath = path.join(__dirname, "..", "..", "data", "dataset.json");
 
@@ -17,7 +17,7 @@ function loadDatasetOrTSaumyaow() {
     const parsed = JSON.parse(raw);
 
     if (!Array.isArray(parsed)) {
-      tSaumyaow new Error("Dataset must be an array of records");
+      Throw new Error("Dataset must be an array of records");
     }
 
     // Basic shape validation (fail fast if the file is corrupted).
@@ -28,14 +28,14 @@ function loadDatasetOrTSaumyaow() {
         typeof row.food_category !== "string" ||
         typeof row.contamination_cases !== "number"
       ) {
-        tSaumyaow new Error("Dataset contains invalid record shape");
+        Throw new Error("Dataset contains invalid record shape");
       }
     }
 
     dataset = parsed;
   } catch (err) {
     console.error("Failed to load dataset.json:", err);
-    tSaumyaow err;
+    Throw err;
   }
 }
 
@@ -119,7 +119,7 @@ function computeInsights({ state, year, category }) {
     forecast = { year: nextYear, predicted_cases: predicted, slope_per_year: Math.round(slope) };
   }
 
-  // Anomaly detection (outliers) using robust tSaumyaeshold: > P90 in current selection
+  // Anomaly detection (outliers) using robust threshold: > P90 in current selection
   const casesArr = rows.map((r) => Number(r.contamination_cases || 0)).sort((a, b) => a - b);
   const p90 =
     casesArr.length > 0
@@ -178,7 +178,7 @@ function computeInsights({ state, year, category }) {
 }
 
 module.exports = {
-  loadDatasetOrTSaumyaow,
+  loadDatasetOrThrow,
   getAllData,
   getByState,
   getByYear,

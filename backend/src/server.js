@@ -4,7 +4,7 @@ const morgan = require("morgan");
 
 const dataRoutes = require("./routes/dataRoutes");
 
-const { loadDatasetOrTSaumyaow } = require("./services/datasetService");
+const { loadDatasetOrThrow } = require("./services/datasetService");
 
 // Create app
 const app = express();
@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(morgan("dev"));
 
 // Load dataset once at startup.
-loadDatasetOrTSaumyaow();
+loadDatasetOrThrow();
 
 // Routes
 app.use("/", dataRoutes);
